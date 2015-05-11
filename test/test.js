@@ -28,10 +28,10 @@ describe( 'validate.io-safe-integer-array', function tests() {
 		var bool;
 
 		bool = isSafeIntegerArray( [1,2,3] );
-		assert.ok( bool );
+		assert.ok( bool, 'primitive array' );
 
 		bool = isSafeIntegerArray( [new Number( Math.pow( 2, 53 ) - 1 ) ] );
-		assert.ok( bool );
+		assert.ok( bool, 'Number array' );
 	});
 
 	it( 'should negatively validate', function test() {
