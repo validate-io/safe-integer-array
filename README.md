@@ -1,8 +1,8 @@
-safe-integer-array
+Safe Integer Array
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Validates if a value is an array of safe integers.
+> Validates if a value is an array of [safe integers](http://www.2ality.com/2013/10/safe-integers.html).
 
 
 ## Installation
@@ -17,18 +17,40 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-safe-integer-array' );
+var isSafeIntegerArray = require( 'validate.io-safe-integer-array' );
 ```
 
-#### foo( value )
+#### isSafeIntegerArray( value )
 
-What does this function do?
+Validates if a value is an `array` of [safe integers](http://www.2ality.com/2013/10/safe-integers.html).
+
+``` javascript
+var bool = isSafeIntegerArray( [ -1, 0, 1 ] );
+// returns true
+```
+
+__Note__: the method will return `false` for an empty `array`.
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-safe-integer-array' );
+var isSafeIntegerArray = require( 'validate.io-safe-integer-array' );
+
+console.log( isSafeIntegerArray( [ 1, 5, 3 ] ) );
+// returns true
+
+console.log( isSafeIntegerArray( [ 1, Math.pow(2,53)-1, 3 ] ) );
+// returns true
+
+console.log( isSafeIntegerArray( [ 1, Math.pow(2,53), 3 ] ) );
+// returns false
+
+console.log( isSafeIntegerArray( [] ) );
+// returns false
+
+console.log( isSafeIntegerArray( [ '1', '2', '3' ] ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,

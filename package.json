@@ -26,12 +26,23 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "integer",
+    "array",
+    "is",
+    "isarray",
+    "integerarray",
+    "safe",
+    "safe integer"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/safe-integer-array/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.5",
+    "validate.io-safe-integer": "^1.0.0"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
